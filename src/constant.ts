@@ -1,4 +1,4 @@
-export type ResponseRedirectStatus = 301 | 302 | 303 | 307 | 308;
+import {ResponseRedirectStatus} from "./typing";
 
 export const PROTOCOL = 'https';
 
