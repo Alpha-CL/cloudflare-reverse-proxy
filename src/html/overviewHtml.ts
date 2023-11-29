@@ -60,10 +60,13 @@ const overviewHtml = `
       width: 100%;
     }
     #root .content .sub-domain {
-      padding: 16px 32px;
-      cursor: pointer;
       border: 1px solid #e0e0e0;
       border-radius: 4px;
+    }
+    #root .content .sub-domain a {
+      display: block;
+      padding: 16px 32px;
+      cursor: pointer;
     }
     #root .content .sub-domain:not(:last-child) {
       margin: 0 12px 12px 0;
@@ -96,8 +99,8 @@ const overviewHtml = `
       border-radius: 4px;
     }
     #root .content .sub-domain a {
-      padding: 12px 0;
       display: block;
+      padding: 12px 0;
     }
     #root .content .sub-domain:not(:last-child) {
       margin-bottom: 12px;
@@ -106,6 +109,19 @@ const overviewHtml = `
   a {
     text-decoration: none;
     color: #333;
+  }
+  a:hover { /* 定义鼠标悬停状态下的样式 */
+    background-color: #f5f5f5;
+  }
+  a:active { /* 定义按钮被点击时的样式 */
+    background-color: #eee;
+  }
+  a:focus { /* 定义按钮获得焦点时的样式 */
+    background-color: #ccc;
+  }
+  a:disabled { /* 定义按钮被禁用时的样式 */
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 </style>
 <head>
