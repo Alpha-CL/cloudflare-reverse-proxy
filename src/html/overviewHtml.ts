@@ -69,7 +69,7 @@ const overviewHtml = `
       margin: 0 12px 12px 0;
     }
   }
-  @media screen and (max-width:1200px) {
+  @media screen and (max-width:1000px) {
     #root {
       flex-flow: column nowrap;
     }
