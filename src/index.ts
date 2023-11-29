@@ -5,7 +5,7 @@ import {
   matchSubDomainByRequest,
 } from "./utils";
 import iframeHtml from "./html/iframeHtml";
-import {SUBDOMAIN_WHITE_LIST} from "./constant";
+import {DOMAIN, PORT, SUBDOMAIN_WHITE_LIST} from "./constant";
 import overviewHtml from "./html/overviewHtml";
 
 /**
@@ -39,20 +39,21 @@ export default {
     ctx: ExecutionContext
   ): Promise<Response> {
 
-    // const requestUrl = new URL(request.url);
-    // const {pathname, search, host} = requestUrl;
+    const requestUrl = new URL(request.url);
+    const {pathname, search, host, port} = requestUrl;
 
     const subDomain = matchSubDomainByRequest(request);
     const url = createUrl({subDomain});
 
     // If the url is www.alphal.cn,
     // the sub-service of the second-level domain name is matched according to the first segment of pathname.
-    if (request.url.match(/^https?:\/\/www.alphal.cn.*/) && SUBDOMAIN_WHITE_LIST.includes(subDomain)) {
-      return createRedirectResponse(url);
+    if (request.url.match(RegExp(`^https?:\/\/www.${DOMAIN}.*`))) {
+      if (SUBDOMAIN_WHITE_LIST.includes(subDomain)) return createRedirectResponse(url);
+      return createHtmlResponse(overviewHtml);
     }
 
     // Match http://alphal.cn/xxx https://alphal.cn/xxx
-    if ((request.url.match(/^https?:\/\/alphal.cn.*/) || request.url.match(/127\.0\.0\.1/)) && !subDomain) {
+    if ((request.url.match(RegExp(`^https?:\/\/${DOMAIN}.*`)) || request.url.match(/127\.0\.0\.1/)) && !subDomain) {
       return createHtmlResponse(overviewHtml);
     }
 
