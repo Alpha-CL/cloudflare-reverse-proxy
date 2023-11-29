@@ -3,7 +3,7 @@ export interface IVariables {
   subDomain: string;
 }
 
-export const subDomainHtml = (variables: IVariables) => {
+export const iframeHtml = (variables: IVariables) => {
 
   const {
     url = '',
@@ -52,4 +52,4 @@ export const subDomainHtml = (variables: IVariables) => {
   `;
 };
 
-export default subDomainHtml;
+export default iframeHtml;

@@ -4,7 +4,7 @@ import {
   createUrl,
   matchSubDomainByRequest,
 } from "./utils";
-import subDomainHtml from "./html/subDomainHtml";
+import iframeHtml from "./html/iframeHtml";
 import {SUBDOMAIN_WHITE_LIST} from "./constant";
 import overviewHtml from "./html/overviewHtml";
 
@@ -57,7 +57,7 @@ export default {
     }
 
     // Use iframe nesting to return sub-services of second-level domain names
-    const html = subDomainHtml({url, subDomain});
+    const html = iframeHtml({url, subDomain});
     return createHtmlResponse(html);
   },
 };
