@@ -45,13 +45,14 @@ const overviewHtml = `
       border-radius: 4px;
     }
     #root .title {
+      font-size: 24px;
       text-align: center;
       line-height: 100px;
       height: 100px;
       width: 100%;
     }
     #root .content {
-      padding: 0 12px 12px 24px;
+      padding: 0 12px 12px 12px;
       overflow: hidden auto;
       display: flex;
       flex-flow: row wrap;
@@ -60,6 +61,8 @@ const overviewHtml = `
       width: 100%;
     }
     #root .content .sub-domain {
+      width: calc((100% - 24px * 5) / 5);
+      margin: 0 12px 24px 12px;
       border: 1px solid #e0e0e0;
       border-radius: 4px;
     }
@@ -67,9 +70,7 @@ const overviewHtml = `
       display: block;
       padding: 16px 32px;
       cursor: pointer;
-    }
-    #root .content .sub-domain:not(:last-child) {
-      margin: 0 12px 12px 0;
+      text-align: center;
     }
   }
   @media screen and (max-width:1000px) {
@@ -136,6 +137,10 @@ const overviewHtml = `
     ${createSudServices(SUBDOMAIN_WHITE_LIST)}
   </div>
 </div>
+
+<script type="javascript">
+
+</script>
 
 </body>
 </html>
