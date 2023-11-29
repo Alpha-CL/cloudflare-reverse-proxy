@@ -62,6 +62,7 @@ const overviewHtml = `
     }
     #root .content .sub-domain {
       width: calc((100% - 24px * 5) / 5);
+      min-width: 130px;
       margin: 0 12px 24px 12px;
       border: 1px solid #e0e0e0;
       border-radius: 4px;
