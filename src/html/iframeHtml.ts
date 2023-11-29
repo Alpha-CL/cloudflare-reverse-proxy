@@ -44,7 +44,7 @@ export const iframeHtml = (variables: IVariables) => {
     <body>
     
     <div id="root">
-      <iframe src="${url}" frameborder="no"  border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+      <iframe src="${url}" frameborder="no"  border="0" marginwidth="0" marginheight="0" scrolling="no"/>
     </div>
     
     </body>
