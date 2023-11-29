@@ -14,7 +14,7 @@ npx wrangler dev
 
 #### Usages
 
-> set domain, port ... on constant.ts
+> set config( eg: domain, port ...) on ./src/constant.ts
 
 ```
 
