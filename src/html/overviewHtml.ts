@@ -117,7 +117,7 @@ const overviewHtml = `
     background-color: #eee;
   }
   a:focus { /* 定义按钮获得焦点时的样式 */
-    background-color: #ccc;
+    background-color: #eee;
   }
   a:disabled { /* 定义按钮被禁用时的样式 */
     opacity: 0.6;
