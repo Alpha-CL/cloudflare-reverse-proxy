@@ -133,7 +133,7 @@ const overviewHtml = `
 <body>
 
 <div id="root">
-  <h3 class="title">Subservice List</h3>
+  <h3 class="title">SubService List</h3>
   <div class="content">
     ${createSudServices(SUBDOMAIN_WHITE_LIST)}
   </div>
