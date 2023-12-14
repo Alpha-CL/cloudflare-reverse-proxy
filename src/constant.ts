@@ -9,10 +9,15 @@ export const DOMAIN = "alphal.cn";
 export const PORT = 9527;
 
 export const SUBDOMAIN_WHITE_LIST = [
-  'chat',
+  'rocket',
   'jenkins',
   'easymock',
+  'xiaoya',
   'qinglong',
-  'rocket',
+  'nexus',
+  'bark',
   'alist',
+  'chat',
+  'pandora',
+  'password'
 ];
