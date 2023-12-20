@@ -15,7 +15,7 @@ export const SUBDOMAIN_WHITE_LIST = [
   'xiaoya',
   'qinglong',
   'nexus',
-  'bark',
+  // 'bark',
   'alist',
   'chat',
   'pandora',
