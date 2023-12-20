@@ -11,6 +11,8 @@
   "scripts": {
     "start": "wrangler dev src/index.ts",
     "deploy": "wrangler deploy src/index.ts",
+    "dev": "wrangler dev",
+    "login": "wrangler login",
     "test": "vitest"
   }
 }
