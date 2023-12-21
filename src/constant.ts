@@ -19,5 +19,7 @@ export const SUBDOMAIN_WHITE_LIST = [
   'alist',
   'chat',
   'pandora',
-  'password'
+  'password',
+  'gemini',
+  'lobe'
 ];
