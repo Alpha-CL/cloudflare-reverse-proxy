@@ -21,5 +21,6 @@ export const SUBDOMAIN_WHITE_LIST = [
   'pandora',
   'password',
   'gemini',
-  'lobe'
+  'lobe',
+  'games',
 ];

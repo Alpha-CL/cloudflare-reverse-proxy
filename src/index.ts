@@ -45,10 +45,20 @@ export default {
     const subDomain = matchSubDomainByRequest(request);
     const url = createUrl({subDomain});
 
-    // If the url is www.alphal.cn,
+    // If the url is www.alphal.cn/service
     // the sub-service of the second-level domain name is matched according to the first segment of pathname.
     if (request.url.match(RegExp(`^https?:\/\/www.${DOMAIN}.*`))) {
       if (SUBDOMAIN_WHITE_LIST.includes(subDomain)) return createRedirectResponse(url);
+      return createHtmlResponse(overviewHtml);
+    }
+
+    // If the url is iframe.alphal.cn/service
+    // the sub-service of the second-level domain name is matched according to the first segment of pathname.
+    if (request.url.match(RegExp(`^https?:\/\/iframe.${DOMAIN}.*`))) {
+      if (SUBDOMAIN_WHITE_LIST.includes(subDomain)) {
+        const html = iframeHtml({url, subDomain});
+        return createHtmlResponse(html);
+      }
       return createHtmlResponse(overviewHtml);
     }
 
@@ -57,8 +67,6 @@ export default {
       return createHtmlResponse(overviewHtml);
     }
 
-    // Use iframe nesting to return sub-services of second-level domain names
-    const html = iframeHtml({url, subDomain});
-    return createHtmlResponse(html);
+    return createHtmlResponse(overviewHtml);
   },
 };
